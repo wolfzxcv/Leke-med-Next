@@ -2,15 +2,15 @@ import React from 'react';
 import styled from 'styled-components';
 import Layout from '../components/common/Layout';
 
-const Index = () => (
+const About = () => (
   <Layout>
-    <Title>Home page</Title>
+    <Title>About page</Title>
   </Layout>
 );
 
 const Title = styled.h1`
-  color: red;
+  color: blue;
   font-size: 50px;
 `;
 
-export default Index;
+export default About;
