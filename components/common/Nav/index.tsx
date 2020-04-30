@@ -1,40 +1,28 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 
-const Nav = () =>(
-    <StyledNav>
-      <ul>
-        <li>
-          <Link href='/'>
-            <a>Home</a>
-          </Link>
-          <li>
-            <Link href='/about'>
-              <a>About</a>
+const Nav = () => (
+  <nav className="navbar navbar-expand navbar-dark bg-dark mb-4">
+    <div className="container">
+      <a className="navbar-brand" href="#">
+        Bitz Price Teller
+      </a>
+      <div className="collapse navbar-collapse">
+        <ul className="navbar-nav ml-auto">
+          <li className="nav-item">
+            <Link href="/">
+              <a className="nav-link">Home</a>
             </Link>
           </li>
-        </li>
-      </ul>
-    </StyledNav>
+          <li className="nav-item">
+            <Link href="/about">
+              <a className="nav-link">About</a>
+            </Link>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 );
-
-
-const StyledNav = styled.div`
-  ul {
-    background: #333;
-    color: #fff;
-    list-style: none;
-    li {
-      display: flex;
-      a {
-        margin: 10px;
-        font-size: 36px;
-        color: yellow;
-        text-decoration: none;
-      }
-    }
-  }
-`;
 
 export default Nav;

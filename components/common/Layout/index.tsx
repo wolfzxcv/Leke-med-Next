@@ -12,7 +12,9 @@ const Layout = (props: any) => (
       />
     </Head>
     <Nav />
-    {props.children}
+    <div className="container">
+      {props.children}
+    </div>
   </div>
 );
 
