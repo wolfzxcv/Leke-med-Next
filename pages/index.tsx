@@ -30,7 +30,7 @@ interface ICurrency {
 }
 
 const Index = () => {
-  const initState: IRes = {
+  const initState = {
     time: {
       updated: '',
       updatedISO: '',
@@ -63,8 +63,8 @@ const Index = () => {
     }
   };
 
-  const [data, setData] = useState(initState);
-  const [currency, setCurrency] = useState('USD');
+  const [data, setData] = useState<IRes>(initState);
+  const [currency, setCurrency] = useState<keyof IBpi>('USD');
   const api = 'https://api.coindesk.com/v1/bpi/currentprice.json';
   const getPrice = async () => {
     const res = await axios.get(api);
@@ -75,7 +75,7 @@ const Index = () => {
     getPrice();
   }, []);
 
-  const displayInfo = data.bpi[currency as 'USD' | 'GBP' | 'EUR'];
+  const displayInfo = data.bpi[currency];
 
   return (
     <Layout>
@@ -86,7 +86,7 @@ const Index = () => {
           <select
             className="form-control"
             value={currency}
-            onChange={(e) => setCurrency(e.target.value)}
+            onChange={(e) => setCurrency(e.target.value as keyof IBpi)}
           >
             <option value="Please select a currency" disabled>
               Please select a currency
